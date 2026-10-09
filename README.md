@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# omnimart — Next.js E-commerce Landing Page
 
-## Getting Started
+Next.js 16 + TypeScript + Tailwind CSS v4. Arabic RTL landing page for "صندوق الأناقة" (Elegance Box) gift box product (watch + perfume). Google Sheets + Resend email integration.
 
-First, run the development server:
+## Screenshot
+
+![Homepage](screenshot-home.png)
+
+## Quick Start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd omnimart
+npm install
+# .env.local already configured with credentials
+npm run dev                 # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Required in `.env.local`:
+- `GOOGLE_SERVICE_ACCOUNT` — Google Sheets API service account JSON
+- `GOOGLE_SHEET_ID` — Target Google Sheet ID
+- `RESEND_API_KEY` — Resend email service API key
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Commands
 
-## Learn More
+```bash
+npm run dev     # Development server (Turbopack)
+npm run build   # Production build
+npm run start   # Production server
+npm run lint    # ESLint
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Arabic RTL layout
+- 8 watch models + 2 box images + logo
+- 58 Algerian wilayas with delivery fees (domicile vs desk pickup)
+- Dual submission: "Confirm & Send" (Sheets + Email) + "Order via WhatsApp"
+- Countdown timer, price calculator
+- Google Sheets append + Resend email notifications
+- Server Actions for form handling
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Git
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Remote: https://github.com/oguenfoude/omnimart.git
+- Branch: main
